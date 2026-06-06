@@ -1,0 +1,6 @@
+Makanan,Nasi goreng,15000.0
+Makanan,Donat,6000.0
+Makanan,Bakso,20000.0
+Minuman,Es teh,5000.0
+Minuman,Kopi hitam,5000.0
+Diskon,Diskon akhir bulan,0.0

@@ -1,0 +1,8 @@
+===== STRUK =====
+Nasi goreng - Rp15000.0
+Donat - Rp6000.0
+Bakso - Rp20000.0
+Es teh - Rp5000.0
+Kopi hitam - Rp5000.0
+Diskon akhir bulan - Rp0.0
+Total : Rp45900.0
