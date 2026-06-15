@@ -1,52 +1,211 @@
-# Tugas Praktik 3 ini memiliki tiga Indikator untuk menilai Hasil Belajar Mahasiswa, yaitu:
+# Tugas Praktik 3 - Manajemen Restoran Berbasis Objek (Java)
 
-- Mampu mengimplementasikan konsep abstraksi dan/atau inheritance
-- Mampu mengimplementasikan konsep encapsulation, polymorphism, exception, I/O, dan Operasi File
-- Mampu mengimplementasikan materi-materi sebelumnya seperti struktur keputusan, struktur pengulangan, Array dan String.
+## Identitas
 
-# Tugas Praktik Pemrograman Berbasis Objek - Studi Kasus: Manajemen Restoran
+- Tugas : Tugas Praktik 3
+- Nama : Zulhilmi Shodiq
+- NIM : 053343025
+- Mata Kuliah : Pemrograman Berbasis Objek
 
-Sekarang, anda diminta untuk membuat program Java yang akan digunakan untuk manajemen restoran. Program ini akan mencakup berbagai konsep pemrograman berbasis objek yang telah dipelajari.
+---
 
-# Petunjuk Pengerjaan Tugas dan Poin untuk Penjelasan di Rekaman Video:
+# Deskripsi Program
 
-1. Buatlah sebuah kelas abstrak MenuItem yang akan menjadi kelas dasar untuk semua menu item dalam restoran. Kelas ini harus memiliki atribut nama (String), harga (double), dan kategori (String). Definisikan metode abstrak tampilMenu() yang akan digunakan untuk menampilkan informasi tentang item menu.
+Program Manajemen Restoran merupakan aplikasi berbasis console yang dibuat menggunakan bahasa pemrograman Java. Program ini digunakan untuk mengelola menu restoran, menerima pesanan pelanggan, menghitung total pembayaran, menerapkan diskon, menampilkan struk pesanan, serta menyimpan data ke dalam file teks.
 
-2. Buatlah tiga kelas turunan dari MenuItem: Makanan, Minuman, dan Diskon.
+Program ini dibuat untuk mengimplementasikan konsep-konsep Pemrograman Berbasis Objek (PBO) yang telah dipelajari pada aktivitas belajar 8-12.
 
-- Kelas Makanan dan Minuman adalah subkelas dari MenuItem dan harus memiliki atribut tambahan yang sesuai dengan jenisnya (misalnya, jenisMakanan dan jenisMinuman). Implementasikan metode tampilMenu() untuk menampilkan informasi khusus tentang makanan dan minuman.
+---
 
-- Kelas Diskon adalah subkelas dari MenuItem yang akan digunakan untuk menerapkan diskon khusus pada menu. Kelas ini harus memiliki atribut diskon (double) dan mengimplementasikan metode tampilMenu() untuk menampilkan informasi tentang diskon yang ditawarkan.
+# Fitur Program
 
-3. Buatlah sebuah kelas Menu yang akan digunakan untuk mengelola semua item menu dalam restoran. Kelas ini harus memiliki atribut berupa sebuah ArrayList untuk menyimpan semua item menu.
+1. Menambahkan menu baru:
+   - Makanan
+   - Minuman
+   - Diskon
 
-4. Buatlah kelas Pesanan yang akan digunakan untuk mencatat pesanan pelanggan. Kelas ini harus memiliki atribut berupa ArrayList untuk menyimpan item-item yang dipesan oleh pelanggan.
+2. Menampilkan seluruh menu restoran.
 
-5. Implementasikan konsep inheritance dengan benar antara kelas-kelas ini.
+3. Mencatat pesanan pelanggan.
 
-6. Implementasikan konsep encapsulation dengan membatasi akses ke atribut-atribut kelas.
+4. Menghitung total pembayaran.
 
-7. Pergunaan pengecualian (exception) yang mungkin terjadi, seperti ketika mencoba mengakses item yang tidak ada dalam menu.
+5. Menerapkan diskon pada pesanan.
 
-8. Program harus memiliki menu utama yang memungkinkan pengguna untuk:
+6. Menampilkan struk pesanan.
 
-- Menambahkan item baru ke menu (makanan, minuman, atau diskon).
-- Menampilkan menu restoran.
-- Menerima pesanan dari pelanggan dan mencatatnya.
-- Menghitung total biaya pesanan dengan mempertimbangkan diskon yang mungkin diterapkan.
-- Menampilkan struk pesanan pelanggan.
-- Keluar dari program.
+7. Menyimpan daftar menu ke file teks.
 
-9. Implementasikan operasi I/O dan operasi file untuk menyimpan dan memuat daftar menu dari sebuah file teks, dan juga menyimpan struk pesananan pelanggan dan memuat dari file teks.
+8. Menyimpan struk pesanan ke file teks.
 
-10. Gunakan struktur keputusan dan pengulangan sesuai dengan kebutuhan, seperti saat menampilkan menu dan memproses pesanan.
+9. Menangani kesalahan input menggunakan Exception Handling.
 
-11. Durasi video penjelasan maksimal 15 menit
+---
 
-# Petunjuk Tambahan:
+# Struktur Class
 
-- Anda dapat menggunakan antarmuka atau abstract class jika diperlukan untuk mengimplementasikan abstraksi, seperti antarmuka untuk makanan, minuman, dan diskon.
+## 1. MenuItem (Abstract Class)
 
-- Gunakan polymorphism untuk mengimplementasikan metode tampilMenu() pada masing-masing kelas turunan.
+Class induk untuk seluruh item menu.
 
-- Pastikan untuk menjaga struktur yang rapi dan dokumentasi yang baik dalam kode Anda.
+### Atribut
+
+- nama
+- harga
+- kategori
+
+### Method
+
+- tampilMenu()
+
+---
+
+## 2. Makanan
+
+Turunan dari MenuItem yang digunakan untuk menyimpan data makanan.
+
+### Atribut Tambahan
+
+- jenisMakanan
+
+---
+
+## 3. Minuman
+
+Turunan dari MenuItem yang digunakan untuk menyimpan data minuman.
+
+### Atribut Tambahan
+
+- jenisMinuman
+
+---
+
+## 4. Diskon
+
+Turunan dari MenuItem yang digunakan untuk menyimpan informasi diskon.
+
+### Atribut Tambahan
+
+- diskon
+
+---
+
+## 5. Menu
+
+Class yang digunakan untuk mengelola seluruh daftar menu restoran.
+
+### Method
+
+- tambahItem()
+- tampilkanMenu()
+- getItem()
+- simpanFile()
+
+---
+
+## 6. Pesanan
+
+Class yang digunakan untuk mengelola pesanan pelanggan.
+
+### Method
+
+- tambahPesanan()
+- hitungTotal()
+- cetakStruk()
+- simpanStruk()
+
+---
+
+## 7. Main
+
+Class utama yang berisi menu program dan interaksi pengguna.
+
+---
+
+# Konsep PBO yang Diimplementasikan
+
+## 1. Abstraction
+
+Menggunakan abstract class MenuItem sebagai class dasar seluruh item menu.
+
+## 2. Inheritance
+
+Class Makanan, Minuman, dan Diskon mewarisi class MenuItem.
+
+## 3. Encapsulation
+
+Seluruh atribut dibuat private dan diakses menggunakan getter dan setter.
+
+## 4. Polymorphism
+
+Method tampilMenu() diimplementasikan berbeda pada masing-masing subclass.
+
+## 5. Exception Handling
+
+Menggunakan try-catch untuk menangani kesalahan input dan akses data menu yang tidak tersedia.
+
+---
+
+# Materi Dasar Java yang Digunakan
+
+- Struktur keputusan (if-else dan switch-case)
+- Struktur pengulangan (for dan do-while)
+- ArrayList
+- String
+- Input menggunakan Scanner
+- File Handling (FileWriter dan PrintWriter)
+
+---
+
+# Cara Menjalankan Program
+
+1. Buka project menggunakan Visual Studio Code atau IDE Java lainnya.
+2. Compile seluruh file Java.
+
+```bash
+javac *.java
+```
+
+3. Jalankan program.
+
+```bash
+java Main
+```
+
+4. Pilih menu yang tersedia sesuai kebutuhan.
+
+---
+
+# File Output
+
+Program akan menghasilkan file:
+
+## menu.txt
+
+Berisi daftar menu restoran yang telah disimpan.
+
+## struk.txt
+
+Berisi rincian pesanan pelanggan dan total pembayaran.
+
+---
+
+# Tampilan Menu Utama
+
+```text
+===== RESTORAN =====
+1. Tambah Menu
+2. Tampilkan Menu
+3. Pesan
+4. Hitung Total
+5. Cetak Struk
+6. Simpan Menu
+7. Simpan Struk
+0. Keluar
+```
+
+---
+
+# Kesimpulan
+
+Program Manajemen Restoran berhasil mengimplementasikan konsep Pemrograman Berbasis Objek yang meliputi Abstraction, Inheritance, Encapsulation, Polymorphism, serta Exception Handling. Selain itu, program juga menerapkan penggunaan ArrayList, struktur keputusan, struktur pengulangan, operasi input/output, dan operasi file sesuai dengan ketentuan Tugas Praktik 3.
